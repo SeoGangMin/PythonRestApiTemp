@@ -6,7 +6,7 @@ Python(Flask + MySQL + SQLAlchemy)
 2. vertualenv installed
 3. python(ver 2.7.5) installed
 
-## Set DevelopEnv
+## Set Project Environment
 1. clone project
 2. move to project folder and set vertualenv and virtualenv activate
  * >  virtualenv venv
