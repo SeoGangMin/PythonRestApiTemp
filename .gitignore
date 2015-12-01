@@ -2,6 +2,12 @@
 __pycache__/
 *.py[cod]
 
+#for osx
+*.DS_Store
+
+#vertualenv
+venv/
+
 # C extensions
 *.so
 

@@ -1,0 +1,22 @@
+
+{% block body %}
+  {% if session.logged_in %}
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry id="actionForm">
+      <dl>
+        <dt>name:
+        <dd><input type=text size=30 name=name id="name">
+        <dt>email:
+        <dd><textarea name=email rows=5 cols=40 id="email"></textarea>
+        <dd><input type=submit value=Share>
+      </dl>
+    </form>
+  {% endif %}
+  <ul class=entries>
+  {% for entry in entries %}
+    <li><h2>{{ entry.name }}</h2>{{ entry.email|safe }}, {{entry.description}}<a href="javascript:deleteEntry('{{ entry.name }}', '{{ entry.email }}'); return false;">삭제</a>
+    <a href="javascript:updateEntry('{{ entry.name }}', '{{ entry.email }}'); return false;">수</a></li>
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em></li>
+  {% endfor %}
+  </ul>
+{% endblock %}
